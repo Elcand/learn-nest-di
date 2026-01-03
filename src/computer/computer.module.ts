@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ComputerController } from './computer.controller';
-import { PowerService } from 'src/power/power.service';
+import { DiskModule } from 'src/disk/disk.module';
+import { CpuModule } from 'src/cpu/cpu.module';
 
 @Module({
-  imports: [PowerService],
+  imports: [DiskModule, CpuModule],
   controllers: [ComputerController],
 })
 export class ComputerModule {}
